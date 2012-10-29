@@ -11,12 +11,31 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121028224032) do
+ActiveRecord::Schema.define(:version => 20121029011012) do
 
   create_table "courses", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "feedbacks", :force => true do |t|
+    t.float    "score"
+    t.integer  "segment_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "feedbacks", ["segment_id"], :name => "index_feedbacks_on_segment_id"
+
+  create_table "segments", :force => true do |t|
+    t.string   "name"
+    t.boolean  "released",   :default => false
+    t.integer  "course_id"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+  end
+
+  add_index "segments", ["course_id"], :name => "index_segments_on_course_id"
 
 end
