@@ -8,4 +8,17 @@ def show
     @course = Course.find(params[:id])
 end
 
+def new
+    @course = Course.new
+end
+
+def create
+    @course = Course.new(params[:course])
+    if @course.save
+        redirect_to course_path(@course)
+    else
+        render 'new'
+    end
+end
+
 end

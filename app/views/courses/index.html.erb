@@ -1,5 +1,7 @@
 <h2>Available Courses</h2>
 
+<p><%= link_to 'Add a new course', new_course_path %>
+
 <ul>
     <% @courses.each do |course| %>
     <li><%= link_to course.name, course_path(course) %></li>
