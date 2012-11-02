@@ -1,5 +1,6 @@
     <thead>
         <tr>
+            <td>Student Email</td>
             <td>Course</td>
             <td>Segment</td>
             <td>Score</td>
@@ -9,6 +10,7 @@
     <tbody>
         <% @feedbacks.each do |feedback| %>
         <tr>
+            <td><%= feedback.user.email %></td>
             <td><%= feedback.segment.course.name %></td>
             <td><%= feedback.segment.name %></td>
             <td><%= feedback.score.to_s %></td>
