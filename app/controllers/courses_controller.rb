@@ -10,18 +10,18 @@ def show
     @segments = @course.segments.where(released: true)
 end
 
-def new
-    @course = Course.new
-end
-
-def create
-    @course = Course.new(params[:course])
-    if @course.save
-        redirect_to course_path(@course)
-    else
-        render 'new'
-    end
-end
+#def new
+#    @course = Course.new
+#end
+#
+#def create
+#    @course = Course.new(params[:course])
+#    if @course.save
+#        redirect_to course_path(@course)
+#    else
+#        render 'new'
+#    end
+#end
 
 def create_feedback
     segment = Segment.find(params[:feedback][:segment_id])
