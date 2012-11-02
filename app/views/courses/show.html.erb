@@ -1,7 +1,8 @@
 <h2><%= @course.name %></h2>
 
+<% @segments.each do |segment| %>
 <div class="segment">
-    <% @segments.each do |segment| %>
+
     <h3><%= segment.name %></h3>
 
     <% if segment.attachment.exists? %>
@@ -22,5 +23,5 @@
       <%= f.action :submit, label: 'Submit Feedback' %>
     <% end %>
 
-    <% end %>
 </div>
+<% end %>
