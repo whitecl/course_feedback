@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102015403) do
+ActiveRecord::Schema.define(:version => 20121102165437) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -64,10 +64,14 @@ ActiveRecord::Schema.define(:version => 20121102015403) do
 
   create_table "segments", :force => true do |t|
     t.string   "name"
-    t.boolean  "released",   :default => false
+    t.boolean  "released",                :default => false
     t.integer  "course_id"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at",                                 :null => false
+    t.datetime "updated_at",                                 :null => false
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.integer  "attachment_file_size"
+    t.datetime "attachment_updated_at"
   end
 
   add_index "segments", ["course_id"], :name => "index_segments_on_course_id"
