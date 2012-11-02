@@ -1,5 +1,5 @@
 class Segment < ActiveRecord::Base
   belongs_to :course
   has_many :feedbacks
-  attr_accessible :name, :released
+  attr_accessible :name, :released, :course_id
 end
