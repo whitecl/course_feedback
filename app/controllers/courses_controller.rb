@@ -7,7 +7,7 @@ end
 
 def show
     @course = Course.find(params[:id])
-    @segments = @course.segments.all
+    @segments = @course.segments.where(released: true)
 end
 
 def new
