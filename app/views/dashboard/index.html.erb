@@ -1,21 +1,5 @@
 <h2>Dashboard</h2>
 
 <table id="feedbacks_list">
-    <thead>
-        <tr>
-            <td>Course</td>
-            <td>Segment</td>
-            <td>Score</td>
-        </tr>
-    </thead>
-
-    <tbody>
-        <% @feedbacks.each do |feedback| %>
-        <tr>
-            <td><%= feedback.segment.course.name %></td>
-            <td><%= feedback.segment.name %></td>
-            <td><%= feedback.score.to_s %></td>
-        </tr>
-        <% end %>
-    </tbody>
+    <%= render 'table_data' %>
 </table>

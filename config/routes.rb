@@ -11,6 +11,7 @@ CourseFeedback::Application.routes.draw do
   post 'new_feedback', to: 'courses#create_feedback'
   
   get 'dashboard', to: 'dashboard#index', as: 'dashboard'
+  get 'poll_feedback', to: 'dashboard#poll_feedback', as: 'poll_feedback'
   
 # The priority is based upon order of creation:
   # first created -> highest priority.
