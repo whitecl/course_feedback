@@ -1,1 +1,7 @@
 <h2><%= @course.name %></h2>
+
+<div class="segment">
+    <% @segments.each do |segment| %>
+    <h3><%= segment.name %></h3>
+    <% end %>
+</div>

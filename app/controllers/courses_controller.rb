@@ -6,6 +6,7 @@ end
 
 def show
     @course = Course.find(params[:id])
+    @segments = @course.segments.all
 end
 
 def new
