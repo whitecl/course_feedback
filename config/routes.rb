@@ -9,6 +9,9 @@ CourseFeedback::Application.routes.draw do
   resources :courses
   
   post 'new_feedback', to: 'courses#create_feedback'
+  
+  get 'dashboard', to: 'dashboard#index', as: 'dashboard'
+  
 # The priority is based upon order of creation:
   # first created -> highest priority.
 
