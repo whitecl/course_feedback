@@ -3,5 +3,18 @@
 <div class="segment">
     <% @segments.each do |segment| %>
     <h3><%= segment.name %></h3>
+
+    <p>Feedback - do you feel like you are caught up with the course?</p>
+    <%= semantic_form_for(Feedback.new, url: new_feedback_path) do |f| %>
+      <%= f.input :segment_id, as: :hidden, value: segment.id %>
+      <%= f.input :score, as: :radio, collection: {
+          "Completely Stuck" => 1.0,
+          "Making Progress" => 3.0,
+          "Done and Ready For The Next Section" => 5.0
+        }
+      %>
+      <%= f.action :submit, label: 'Submit Feedback' %>
+    <% end %>
+
     <% end %>
 </div>
