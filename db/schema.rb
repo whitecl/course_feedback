@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102013040) do
+ActiveRecord::Schema.define(:version => 20121102015403) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20121102013040) do
     t.integer  "segment_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "user_id"
   end
 
   add_index "feedbacks", ["segment_id"], :name => "index_feedbacks_on_segment_id"
