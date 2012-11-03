@@ -5,7 +5,7 @@
 
     <h3><%= segment.name %></h3>
 
-    <% if segment.attachment.exists? %>
+    <% unless segment.attachment_file_name.blank? %>
     <p>Download Attachment:
         <%= link_to( image_tag(segment.attachment.url(:thumb)), segment.attachment.url, target: '_blank') %>
     </p>
